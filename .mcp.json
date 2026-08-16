@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mobile-mcp": {
+      "command": "npx",
+      "args": ["-y", "@mobilenext/mobile-mcp@latest"],
+      "description": "Mobile MCP - Control Android devices via ADB (screenshots, tap, swipe, type, app launch, UI inspection)"
+    }
+  }
+}
