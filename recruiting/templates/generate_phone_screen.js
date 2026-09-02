@@ -205,7 +205,7 @@ const BLANK = Object.assign({}, REQ, {
 
 const FILLED = Object.assign({}, REQ, {
   docTitle: "Phone Screen – R-90323 – 09/02/2026",
-  name: "[Not captured on recording]",
+  name: "",
   title: "",
   company: "DocuSign\nPrior: Microsoft – 13 years",
   date: "09/02/2026",
