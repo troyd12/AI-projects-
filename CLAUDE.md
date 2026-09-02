@@ -15,6 +15,7 @@ Two things live here: the **TD Movement** portfolio site and recruiting/AI worki
 | `recruiting/candidate-packets/` | Recruiting | ATS packets. **Git-ignored** — contains PII; never commit. |
 | `ai-projects/` | AI | Agents, workflows, prompts, experiments. One subfolder per project. |
 | `ai-projects/routines/` | AI | Source of truth for scheduled Routine prompts. Edit here → PR → apply with `update_trigger`. |
+| `ai-projects/video-pipeline/` | AI | Audit, QC gate (`qc_video.py`), EXIF fixer and nightly runner for the TheScamFile avatar-video jobs on the PC. |
 | `docs/` | Docs | Notes, screenshots, decision records. |
 | `.claude/` | Harness | `settings.json` permissions for Claude Code. |
 

@@ -1,0 +1,15 @@
+{
+  "tier": "draft",
+  "_comment": "One job per night owns the GPU. Paths are relative to cwd. 'expect' is the glob the render must produce; 'post' runs only after QC PASS and may use {output}.",
+  "jobs": [
+    {
+      "name": "v1_photo23_longcat",
+      "cwd": "C:\\Wan2GP",
+      "cmd": ["python", "wgp.py", "--i2v", "--image", "input\\23.jpg", "--audio", "drive.wav", "--out", "out\\v1_photo23"],
+      "inputs": ["input\\23.jpg", "drive.wav"],
+      "expect": "out\\v1_photo23\\*.mp4",
+      "timeout_min": 90,
+      "post": ["python", "watermark.py", "{output}"]
+    }
+  ]
+}
