@@ -1,7 +1,7 @@
 # Daily Top 10 GitHub Tools — no repeats
 
 - **Trigger:** `trig_01E8R3eC7sy4EcgRfHzVEMw9`
-- **Cron:** `0 16 * * *` (UTC) — 9:00am PT daily
+- **Cron:** `15 16 * * *` (UTC) — 9:15am PT daily (staggered 2026-09-02 so it no longer fires alongside AI Events)
 - **Model:** claude-sonnet-4-6
 - **Connectors:** Gmail, Google Drive
 - **Tools:** Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
