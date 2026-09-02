@@ -1,0 +1,29 @@
+# Candidate PII — never commit
+recruiting/candidate-packets/*
+!recruiting/candidate-packets/README.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Office temp / lock files
+~$*
+*.tmp
+*.bak
+
+# Local Claude state
+.claude/settings.local.json
+.claude/*.local.*
+
+# Python / Node scratch (ai-projects)
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.env
+.env.*
