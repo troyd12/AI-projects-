@@ -38,6 +38,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 QC = HERE / "qc_video.py"
 
+PRODUCER_QC = HERE / "producer_qc.py"
 # ---- KNOWN FAILURE SIGNATURES & RECOVERY ----
 # Each signature maps to (human explanation, is_transient, suggested_action)
 KNOWN_FAILURES = {
@@ -444,6 +445,55 @@ def run_job(
             result.update(status="FAIL_QC", cause=f"QC could not run: {e}")
             history.record_attempt(name, "FAIL_QC")
             return result
+        
+        # ---- PRODUCER QC (Production-grade quality gate) ----
+        producer_qc_json = day_dir / f"{name}.producer_qc.json"
+        producer_qc_html = day_dir / f"{name}.producer_qc.html"
+        pqc = subprocess.run(
+            [sys.executable, str(PRODUCER_QC), str(out), "--tier", tier, 
+             "--json", str(producer_qc_json), "--html", str(producer_qc_html)],
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+        
+        with open(log, "a", errors="replace") as lf:
+            lf.write("\n# ---- PRODUCER QC ----\n" + pqc.stdout + pqc.stderr)
+        
+        try:
+            pqc_rep = json.loads(producer_qc_json.read_text())
+            pqc_score = pqc_rep.get("overall_score", 0)
+            pqc_status = pqc_rep.get("overall_status", "FAIL")
+            
+            result["producer_qc"] = dict(
+                score=pqc_score,
+                status=pqc_status,
+                recommendations=pqc_rep.get("recommendations", []),
+                json_report=str(producer_qc_json),
+                html_report=str(producer_qc_html),
+            )
+            
+            # Quarantine logic: score determines delivery status
+            if pqc_score < 80:
+                result["status"] = "FAIL_PRODUCER_QC"
+                result["cause"] = f"Producer QC score {pqc_score}/100 below minimum (80)"
+                with open(log, "a", errors="replace") as lf:
+                    lf.write(f"\n[QUARANTINE] Producer QC FAILED: {pqc_score}/100\n")
+                history.record_attempt(name, "FAIL_PRODUCER_QC")
+                return result
+            elif pqc_score >= 90:
+                result["producer_qc"]["status"] = "APPROVE"
+                with open(log, "a", errors="replace") as lf:
+                    lf.write(f"\n[APPROVED] Producer QC PASSED: {pqc_score}/100 — Ready for delivery\n")
+            else:  # 80-90
+                result["producer_qc"]["status"] = "CONDITIONAL"
+                with open(log, "a", errors="replace") as lf:
+                    lf.write(f"\n[ALERT] Producer QC WARNING: {pqc_score}/100 — Conditional approval\n")
+        
+        except Exception as e:
+            with open(log, "a", errors="replace") as lf:
+                lf.write(f"\n[WARNING] Producer QC error (non-fatal): {e}\n")
+            result["producer_qc"] = dict(status="SKIP", cause=str(e))
         
         # QC passed: run post-processing if configured
         if result["status"] == "PASS" and job.get("post"):
