@@ -5,7 +5,7 @@
 - **Model:** claude-sonnet-5
 - **Connectors:** Gmail, Google Drive
 - **Tools:** Bash, Read, Write, Edit, Glob, Grep
-- **History:** 2026-09-02 — merged the separate Friday routine (`trig_01WJH7EvQ61ezHC97zsPFf8u`, deleted) into this one as a day-of-week branch; added create-if-missing for the ledger and a one-email-per-run guard.
+- **History:** 2026-09-02 — target prompt: merges the separate Friday routine (`trig_01WJH7EvQ61ezHC97zsPFf8u`, to be deleted) into this one as a day-of-week branch; adds create-if-missing for the ledger and a one-email-per-run guard. Not yet applied to the live Routine.
 
 ## Prompt
 
