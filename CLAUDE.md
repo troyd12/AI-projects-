@@ -14,6 +14,7 @@ Two things live here: the **TD Movement** portfolio site and recruiting/AI worki
 | `recruiting/trackers/` | Recruiting | Master Tracker exports and candidate tracker PDFs. |
 | `recruiting/candidate-packets/` | Recruiting | ATS packets. **Git-ignored** — contains PII; never commit. |
 | `ai-projects/` | AI | Agents, workflows, prompts, experiments. One subfolder per project. |
+| `ai-projects/routines/` | AI | Source of truth for scheduled Routine prompts. Edit here → PR → apply with `update_trigger`. |
 | `docs/` | Docs | Notes, screenshots, decision records. |
 | `.claude/` | Harness | `settings.json` permissions for Claude Code. |
 
