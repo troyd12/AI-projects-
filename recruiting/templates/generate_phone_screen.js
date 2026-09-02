@@ -225,23 +225,23 @@ const FILLED = Object.assign({}, REQ, {
     { q: QUESTIONS[3], a: "The DocuSign authorization platform.\n- Schema conformance – partner teams have their own resource-relationship models. Reconciling the Maestro team's schema took five or six meetings.\n- Confidence in migrating – answered with data: cost efficiency, issues eliminated, results from teams already migrated." },
     { q: QUESTIONS[4], a: "- Policy model correctness – years of implicit authorization semantics sit in legacy code and must be captured exactly.\n- Hot critical path – availability, latency, caching, regional failure behavior, and an explicit fail-open vs fail-closed decision. Chose fail-open at DocuSign during rollout because consumers were internal.\n- Migration and adoption – tiered migration based on legacy complexity, then getting teams to move.\n- Governance – track who changed a policy, when and why, so behavior changes are traceable." },
     { q: QUESTIONS[5], a: "Can provide dates for early next week." },
-    { q: QUESTIONS[6], a: "" },
-    { q: QUESTIONS[7], a: "Bellevue, WA. Open to relocation." },
+    { q: QUESTIONS[6], a: "No target provided. Asked for the range first, then for total compensation. Would not share his current salary.\n- Coming from the Seattle market, which typically pays higher than Portland." },
+    { q: QUESTIONS[7], a: "Owns a home in the Seattle area and is willing to relocate.\n- Wife works remotely, so the transition would be straightforward.\n- No issue with working on campus." },
   ],
 
   comp: {
-    expectations: "",
-    base: "",
-    bonus: "",
-    stock: "",
+    expectations: "No target provided; would not share current salary. Asked for the range and for total compensation. Coming from the Seattle market, which typically pays higher than Portland.",
+    base: "Not disclosed.",
+    bonus: "Not disclosed.",
+    stock: "Not disclosed.",
     competingInterviews: "Interviewing; nothing at a late stage.",
     competingOffers: "None.",
     timeline: "Can provide dates for early next week.",
     nonCompete: "Not discussed.",
-    location: "Bellevue, WA. Open to relocation.",
+    location: "Seattle area (Bellevue, WA). Willing to relocate; wife works remotely, so the move would be straightforward. No issue working on campus.",
   },
 
-  recommendation: "- Strong overall. Has the skill and discipline for the role.\n- Familiar with the key concepts and frameworks needed for the security layer.\n- Already doing similar work today.\n- Spoke well to evangelizing his work with larger teams and at larger scale.\n- Advance to hiring manager conversation with Eric Dwyer.",
+  recommendation: "Strong candidate and a solid fit for the role. His skill set aligns closely with what we need, and he comes from a well-architected enterprise environment at DocuSign, where the procedures and policies in place map well to how Nike's Global Technology team operates. He is currently implementing similar security and authentication systems using the same technologies listed in the job description. Recommend advancing to a hiring manager conversation with Eric Dwyer.",
 });
 
 // ---------- write -----------------------------------------------------------

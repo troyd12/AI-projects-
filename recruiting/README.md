@@ -1,7 +1,10 @@
 # Recruiting – phone screen forms
 
+See `CLAUDE.md` in this directory for the full repeatable process.
+
 ## Layout
 
+- `research/` — market and compensation research, one file per company or req.
 - `templates/Nike_Phone_Screen_TEMPLATE_R-90323.docx` — blank, reusable phone screen
   form. Req header (R-90323, Eric Dwyer, grade 45) and the eight screening questions
   are pre-filled; every candidate field is empty. Open in Word, fill in, save under
