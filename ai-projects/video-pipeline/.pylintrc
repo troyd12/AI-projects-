@@ -1,0 +1,23 @@
+[MASTER]
+jobs=4
+load-plugins=pylint.extensions.docparams
+ignored-patterns=test_.*?\.py
+
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    too-few-public-methods,
+    too-many-arguments,
+    line-too-long,
+    import-outside-toplevel
+
+[FORMAT]
+max-line-length=120
+
+[DESIGN]
+max-locals=20
+max-branches=15
+max-statements=100
+
+[DOCUMENTATION]
+expected-format=google
