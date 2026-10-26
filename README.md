@@ -11,3 +11,7 @@ Personal AI projects and Claude skills.
 ## Site
 
 `index.html` is the personal site (The TD Movement).
+
+## Docs
+
+- [`docs/skills-for-success-playbook.html`](docs/skills-for-success-playbook.html): visual nine-play guide on applying Skills for Success on a Workday requisition.
