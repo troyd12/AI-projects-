@@ -16,6 +16,13 @@ of how we assess talent. We're looking for evidence of an athlete mindset: how s
 prepares, competes, adapts, and works with others, and how that shows up in their work.
 There's no one 'right' background; it's about behaviors, not participation."
 
+## HM-facing wording (for prep guides and emails)
+
+"Connection to Sport is part of how Nike assesses every candidate. It's about athlete
+mindset: how someone prepares, competes, adapts under pressure, holds themselves accountable,
+and works with a team. It is not about whether they played or follow sports. Come ready to
+say which two or three of those behaviors matter most in this role."
+
 ## Questions to ask the Hiring Manager
 
 - What does strong Connection to Sport look like in this role?

@@ -39,9 +39,12 @@ reqs, Workday, posting strategy, and "my HM"; a hiring manager talks about "my r
 
 ### 1. Establish the stage and the role
 
-Ask for, or pull from pasted material, the basics: job title, req number if it exists, HM
+Pull the basics from what the person said or pasted: job title, req number if it exists, HM
 name, global grade, location, whether the role is new or a backfill, and the business group.
-Then establish which stage the person is at:
+In recruiter mode, ask for anything missing that only the recruiter can supply. In hiring
+manager mode, do not ask the HM for grade, req number, or compensation; those are
+recruiter-owned, so leave them as `[recruiter to confirm]` and move on. Then establish which
+stage the person is at:
 
 - **Before the session** (most common): the user wants to prepare.
 - **During the session**: the user wants live prompts and a place to capture decisions.
@@ -67,7 +70,11 @@ role library before drafting anything:
 
 Each role file gives a starter Skills for Success list, the sharpest Team and Role Insight
 questions for that family, sourcing targets, and the Connection to Sport angle. They are
-starting points, not answers; the HM's input always wins.
+starting points, not answers; the HM decides which skills matter. The recruiter still owns
+how they are written: when an HM names a tool or system (Blue Yonder, Cvent, a cloud
+certification) as a skill, write it as evidence under the capability it demonstrates and
+tell the HM you did so and why, with an offer to promote it if it is truly a day-one
+must-have.
 
 ### 3. Produce the stage-appropriate deliverables
 
@@ -87,13 +94,19 @@ starting points, not answers; the HM's input always wins.
 
 **Before the session (hiring manager mode)**
 
-1. Give the HM the one-page prep guide from `assets/hm-prep-guide.md`, personalized to the role.
-2. Draft answers to the prep questions from whatever they have told you, with gaps marked for
-   them to fill. Keep the HM's own words when they gave them.
-3. Explain Connection to Sport in two or three sentences using `references/connection-to-sport.md`.
-   HMs often assume it means "played sports"; it does not, and getting this wrong skews the
-   panel's assessment.
-4. Offer a first-cut Skills for Success list and ask them to rank, cut, and add.
+Deliver one document, in the order of `assets/hm-prep-package.md`:
+
+1. The one-page prep guide from `assets/hm-prep-guide.md`, personalized to the role.
+2. Draft answers to the seven prep questions (they are the numbered list in
+   `assets/hm-prep-email.md`) from whatever the HM has told you, with `[brackets]` for gaps
+   only they can fill. Keep the HM's own words when they gave them.
+3. Connection to Sport in two or three sentences, using the HM-facing wording in
+   `references/connection-to-sport.md`. HMs often assume it means "played sports"; it does
+   not, and getting this wrong skews the panel's assessment.
+4. A first-cut Skills for Success list for them to cut, rank, and add to.
+
+HM-facing documents should not use the session's section letters (A to G) or TA shorthand;
+translate "section A questions" into plain topics such as "about the role and the team".
 
 **During the session (either mode)**
 
@@ -108,7 +121,13 @@ skipped are those already resolved in prep, and say so in the notes.
    with the one-line evidence statement the panel will use.
 2. Draft the recap email from `assets/recap-email.md`: decisions, the skills list, interview
    panel and timing, open items with owners and due dates, and the check-in cadence agreed.
-3. Produce the action tracker (the five post-session items plus anything role-specific).
+   If the session skipped a section the template covers (search targets, Connection to
+   Sport behaviors), propose from the role library and mark it `[CONFIRM]` rather than
+   leaving it blank; an HM corrects a proposal faster than they fill a blank. Schedule the
+   first talent brief on the agreed check-in day, one to two weeks out.
+3. Produce the action tracker from `assets/action-tracker.md`. It is recruiter-facing and
+   stays out of the email: deliver it as its own section or file so the email can be sent
+   as is.
 
 ### 4. Quality bar before handing anything back
 
