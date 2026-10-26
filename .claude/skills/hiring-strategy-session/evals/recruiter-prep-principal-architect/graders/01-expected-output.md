@@ -1,0 +1,7 @@
+---
+type: llm
+focus: trace
+weight: 1
+---
+
+The result matches this description: A filled pre-meeting form with unverified fields marked for confirmation rather than guessed, an HM prep email with prep questions, a session agenda using the guide's A to G sections, and a draft Skills for Success list of 3 to 10 observable skills with critical skills first, drawn from the principal architect library. Mentions the Global Corp Grade 20+ internal candidate feedback obligation and MYNEXT consideration.
