@@ -51,16 +51,18 @@ Link to the shared notes doc: [CoPilot page / Box Note]
 - Applies (Global Corp 20+ / Americas SC 20+): [Y/N]
 - HM reminded of verbal feedback within 3 to 5 business days and the Workday task: [Y]
 
-## Skills for Success (agreed)
-Critical:
-1.
-2.
-3.
-Supporting:
-4.
-5.
-Moved to onboarding plan:
--
+## Skills alignment (Grade 20+ only; screen shared on the req)
+- Grade band: [20+ align / 10-15 no edits]
+- Defaulted Optional Skills count:
+- Removed:
+- Added (searched in Optional Skills field):
+- Final list (3 to 10), with recruiter note per skill:
+  1.
+  2.
+  3.
+- Required Skills empty: [Y]
+- Learnable in 90 days (onboarding plan, not the req):
+- Job Profile concern to flag to Leader / Peer Coach: [none / describe]
 
 ## Decisions and open items
 | Item | Owner | Due |

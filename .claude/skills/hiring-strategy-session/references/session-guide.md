@@ -71,7 +71,8 @@ define next steps. Bring to the meeting:
 - What does success look like?
 - To define the target candidate profile, identify and align on the skills needed to succeed.
   These skills go on the Workday job requisition to create clarity and consistency through
-  the hiring process.
+  the hiring process. (Grade 20+: share the req on screen, review the defaulted Optional
+  Skills and Suggested Skills, prioritize 3 to 10. See `skills-on-reqs-program.md`.)
 - How can this position best be sold to a candidate? What is most appealing: the role, the
   challenge, the business team?
 - How would you describe your team dynamics? Skill gaps?
@@ -131,4 +132,5 @@ Post-strategy meeting checklist (recruiter):
 3. Document the agreed search strategy, interview panel, and timelines in the recruiting plan.
 4. Confirm open or action items (comp, leveling, posting, assessments) and owners with due dates.
 5. Confirm the agreed Skills for Success are accurately reflected on the Workday job
-   requisition before posting.
+   requisition before posting (Optional Skills field only, Required Skills empty, no changes
+   after posting).

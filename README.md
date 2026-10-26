@@ -15,3 +15,4 @@ Personal AI projects and Claude skills.
 ## Docs
 
 - [`docs/skills-for-success-playbook.html`](docs/skills-for-success-playbook.html): visual nine-play guide on applying Skills for Success on a Workday requisition.
+- [`docs/skills-on-reqs-study-guide.html`](docs/skills-on-reqs-study-guide.html): twelve-lesson study guide on the Skills on Job Requisitions launch, with step-by-step Workday screen sketches.

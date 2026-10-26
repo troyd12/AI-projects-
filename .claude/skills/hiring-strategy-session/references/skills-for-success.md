@@ -1,83 +1,89 @@
-# Skills for Success (Workday skills implementation)
+# Skills for Success: narrowing the requisition's skills
 
-The Workday skills implementation puts a short, agreed list of skills directly on the job
-requisition. Those skills then show up in the posting, drive how recruiters screen, and give
-the interview panel a shared language. The quality of the list decides the quality of the
-search, so this is the single most important output of the strategy session.
+"Skills for Success" is what the strategy session guide calls the agreed skills list. In
+Workday it lives in the requisition's Optional Skills field. For Grade 20+ roles the field
+arrives pre-filled with the Job Profile's validated skills (around 19), and the session's
+job is to narrow it to the 3 to 10 most critical to success and add anything missing from
+the Skills Cloud library. For Grade 10 and 15 roles the list stays as populated.
 
-## The rules from the guide
+Read `skills-on-reqs-program.md` for the fields, grade workflows, phases, and scripts. This
+file is about making the list good.
 
-1. **3 to 10 Optional Skills** that best represent success in the role (Corporate and
-   Firstline+ Leadership roles).
-2. **Critical skills first.** Prioritize the skills needed for success over comprehensive
-   wish lists. If an HM cannot say what happens when a hire lacks a skill, it is not critical.
-3. **One input, not the whole decision.** Skills sit alongside experience, Leadership
-   Defined, Connection to Sport, and demonstrated performance.
-4. The agreed list must be accurately reflected on the Workday job requisition **before
-   posting** (post-session checklist, item 5).
+## What a Workday skill looks like
 
-## How to write a skill so it is useful
+Skills are short library labels, technical or interpersonal: "Enterprise Architecture",
+"Vendor Negotiation", "Data Analysis", "Communication". They are not sentences and they do
+not carry evidence. That is why the recruiter keeps a note beside each one: what the HM
+meant by it for this role, and what it looks like when someone has it. The note goes in
+the recruiting plan and the recap email, never into Workday.
 
-A skill is an observable capability someone can demonstrate, not a topic or a noun.
-
-| Weak (topic) | Strong (observable capability) |
+| Label on the req | Recruiter note (recap and recruiting plan) |
 |---|---|
-| Architecture | Designs enterprise integration architectures across multi-region platforms |
-| Communication | Presents technical trade-offs to non-technical executives and secures decisions |
-| Vendor management | Negotiates and manages multi-vendor event production contracts to budget |
-| Supply chain | Builds and runs inventory replenishment models that balance service level and working capital |
+| Enterprise Architecture | Designs end-to-end architectures across platforms and regions; look for artifacts they authored that shipped at scale |
+| Stakeholder Management | Gets standards adopted by teams they do not manage; ask for an example of a decision they influenced without authority |
+| Vendor Negotiation | Runs build / buy / partner evaluations and negotiates the resulting contracts |
 
-Each skill carries a one-line **evidence statement**: what the panel should look for in a
-resume, work sample, or interview answer. Evidence statements are what make the Workday
-list usable by interviewers who were not in the strategy session.
+## Choosing between labels
 
-## Working with the Hiring Manager
+- Prefer the specific label over the broad one when both exist ("Cloud Architecture" over
+  "Information Technology"; "Demand Forecasting" over "Supply Chain").
+- Drop duplicates: if "Communication" and "Presentation Skills" both sit on the list and
+  the HM means one thing, keep the one closer to the work.
+- Tools and products: the library has many. Prefer the capability unless the tool is the
+  job (a Workday integration developer needs "Workday Integration"; an architect who happens
+  to use Jira does not need "Jira").
+- Interpersonal skills count. Senior and principal roles fail on influence more often than
+  on depth; keep one or two that name how the person works with others.
 
-HMs generate better lists by reacting than by inventing. The recruiter brings a draft of 6 to
-8 skills from the role library and the JD, then runs three passes:
+## Working the list with the HM
 
-1. **Cut.** Which of these would you not reject a strong candidate for lacking? Remove them.
-2. **Rank.** Which three would you refuse to hire without? Those are the critical skills.
-3. **Add.** What does the last person who succeeded in this role do that is not on the list?
+Share the req on screen. The three moves from the enablement deck:
 
-Stop when the list is between 3 and 10 and the HM can explain each one in a sentence. If the
-HM pushes for 12+, ask which ones could be learned in the first 90 days; those move to the
-onboarding plan, not the requisition.
+1. **Frame the purpose.** "We'll review the skills associated with this role and align on
+   those most critical to success, so the requisition reflects the capabilities needed."
+2. **Evaluate the defaulted skills.** Which connect most directly to the outcomes we
+   discussed? Which are too broad, duplicative, or less relevant? Are any critical ones
+   missing?
+3. **Prioritize and confirm.** Land on 3 to 10. "I'll update the requisition to reflect our
+   discussion, and you'll be able to review those skills in Workday once it is posted."
 
-## Workday-ready format
+In practice this is three passes over the defaulted list: cut what the HM would not reject
+a strong candidate for lacking, keep what they would refuse to hire without, add what the
+best performer does that is missing (search it in the Optional Skills field). If the HM
+pushes past ten, ask which could be learned in the first 90 days; those go to the
+onboarding plan.
 
-Use this block in the recap email and in the recruiting plan. Confirm the exact field names
-and skill taxonomy entries with the Workday requisition before posting; the names below are
-the human-readable versions, and Workday may map them to taxonomy terms.
+## Recording the agreed list
+
+Use this block in the recap email and the recruiting plan. Workday gets only the labels.
 
 ```
-SKILLS FOR SUCCESS: [Job Title] (Req [number])
+AGREED SKILLS: [Job Title] (Req [number], Grade [grade])
 
-Critical skills (must demonstrate)
-1. [Skill as observable capability]
-   Evidence: [what the panel looks for]
-2. ...
-3. ...
-
-Supporting skills (strongly preferred)
-4. ...
-   Evidence: ...
+Optional Skills on the requisition (final, N of 10)
+1. [Label]  : [recruiter note]
+2. [Label]  : [recruiter note]
 ...
 
-Learnable in first 90 days (not on requisition; goes to onboarding plan)
-- ...
+Removed from the defaulted list: [labels]
+Added from the Skills Cloud: [labels]
+Learnable in first 90 days (onboarding plan, not the req): [items]
+Required Skills field: empty (confirmed)
+Finalized before posting on [date]; no changes after posting.
 
 Other assessment inputs: experience, Leadership Defined, Connection to Sport
-([named behaviors from section B]), demonstrated performance.
+([named behaviors]), demonstrated performance. Skills are not assessment criteria in
+the current phase.
 ```
 
 ## Common mistakes
 
-- Listing tools instead of capabilities ("Workday", "Excel", "AutoCAD"). Tools belong inside
-  the evidence statement, if at all.
-- Repeating the JD's responsibility bullets as skills. Responsibilities describe the job;
-  skills describe the person who does it well.
-- Leaving leadership or stakeholder skills off technical roles. Principal-level and
-  manager-level roles fail on influence far more often than on technical depth.
-- Writing the list for the ideal hire from a competitor. Write it for what success in this
-  team looks like; section A of the session gives you that.
+- Editing a Grade 10 or 15 req. Leave it.
+- Entering anything in Required Skills. Workday blocks the req.
+- Keeping all 19 because removing feels rude. A long list hides what matters; the deck's
+  own line is "prioritize relevance over volume".
+- Telling the HM interviewers will score against the list. Not in Crawl.
+- Changing the list after posting because a late stakeholder weighed in. Raise it with your
+  Leader or Peer Coach instead.
+- Not flagging a Job Profile whose defaults do not fit. The next recruiter inherits the
+  same list.

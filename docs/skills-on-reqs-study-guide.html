@@ -1,0 +1,483 @@
+<title>Skills on Reqs Study Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: a study guide in twelve short lessons, each one band; Workday mock screens drawn as SVG beside the step text. */
+:root{
+  --bg:#F6F4EF; --surface:#FFFFFF; --ink:#1B1F24; --muted:#5B636E; --line:#DAD6CD;
+  --accent:#E8501B; --accent-ink:#FFFFFF; --accent-soft:#FBE6DC;
+  --good:#1E7F5C; --good-soft:#DDF2E8; --bad:#B23A2A; --bad-soft:#F7DEDA; --warn:#A86A00; --warn-soft:#FBEFD2;
+  --wd:#0875E1; --wd-soft:#E6F0FB; --chip:#EEF1F5;
+  --display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;
+  --body:'Barlow','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#15181C; --surface:#1E2227; --ink:#F1EEE8; --muted:#A3A9B2; --line:#343A42;
+  --accent:#FF6A33; --accent-ink:#15181C; --accent-soft:#3A251C;
+  --good:#5BCB9A; --good-soft:#1C3A2E; --bad:#F08A7A; --bad-soft:#44241F; --warn:#F2B64A; --warn-soft:#3C2F14;
+  --wd:#5EA8F5; --wd-soft:#1C2A3A; --chip:#2A3038; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#15181C; --surface:#1E2227; --ink:#F1EEE8; --muted:#A3A9B2; --line:#343A42;
+  --accent:#FF6A33; --accent-ink:#15181C; --accent-soft:#3A251C;
+  --good:#5BCB9A; --good-soft:#1C3A2E; --bad:#F08A7A; --bad-soft:#44241F; --warn:#F2B64A; --warn-soft:#3C2F14;
+  --wd:#5EA8F5; --wd-soft:#1C2A3A; --chip:#2A3038; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1;margin:0;text-wrap:balance}
+h1{font-size:clamp(42px,8vw,80px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;text-transform:uppercase}
+h3{font-size:21px;font-weight:600}
+p{margin:0;max-width:62ch}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+header{padding-block:52px 28px;border-bottom:3px solid var(--ink);display:grid;gap:16px}
+header .sub{font-size:19px;max-width:60ch}
+.toc{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.toc a:hover,.toc a:focus-visible{border-color:var(--accent);outline:none}
+
+.lesson{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start;padding-block:40px;border-bottom:1px solid var(--line)}
+.lesson>*{min-width:0}
+.lesson.full{grid-template-columns:1fr}
+.num{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.12em;color:var(--accent)}
+.text{display:grid;gap:12px}
+ul,ol{margin:0;padding-left:20px;display:grid;gap:6px}
+@media (max-width:760px){.lesson{grid-template-columns:1fr;gap:20px}}
+
+.callout{border-left:4px solid var(--accent);background:var(--surface);padding:10px 14px;font-size:15px}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout.stop{border-color:var(--bad);background:var(--bad-soft)}
+.script{background:var(--surface);border:1px solid var(--line);padding:10px 14px;font-style:italic;font-size:15px}
+.k{font-weight:600}
+
+/* glossary */
+.gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.term{background:var(--surface);border:1px solid var(--line);padding:12px 14px;display:grid;gap:4px}
+.term .t{font-family:var(--display);font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.03em}
+.term .d{font-size:14px}
+@media (max-width:600px){.gloss{grid-template-columns:1fr}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);padding:14px;display:grid;gap:4px}
+.stat .n{font-family:var(--display);font-weight:800;font-size:38px;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px}
+@media (max-width:600px){.stats{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;gap:28px}
+.step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start;background:var(--surface);border:1px solid var(--line);padding:18px}
+.step>*{min-width:0}
+.step .sn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:800;font-size:19px}
+.step h3{margin-top:8px}
+.step .do{display:grid;gap:8px;margin-top:8px}
+.step .where{font-size:13px;color:var(--muted);margin-top:6px}
+@media (max-width:760px){.step{grid-template-columns:1fr}}
+
+/* fields table */
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px}
+.tbl{overflow-x:auto}
+.pill{display:inline-block;padding:2px 8px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.pill.ok{background:var(--good-soft);color:var(--good)} .pill.no{background:var(--bad-soft);color:var(--bad)} .pill.ref{background:var(--warn-soft);color:var(--warn)}
+
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.phase{background:var(--surface);border:1px solid var(--line);padding:14px;display:grid;gap:6px;align-content:start}
+.phase.now{border:2px solid var(--accent)}
+.phase .ph{font-family:var(--display);font-weight:800;font-size:28px;text-transform:uppercase;line-height:1}
+.phase .when{font-size:13px;color:var(--muted)}
+.phase ul{font-size:14px}
+@media (max-width:600px){.phases{grid-template-columns:1fr}}
+
+/* quiz */
+details{background:var(--surface);border:1px solid var(--line);padding:10px 14px}
+details+details{margin-top:8px}
+summary{cursor:pointer;font-weight:600}
+summary::marker{color:var(--accent)}
+details p{margin-top:8px;font-size:15px}
+
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:var(--body)}
+footer{padding-top:24px;font-size:13px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Study guide for recruiters</div>
+  <h1>Skills on Reqs</h1>
+  <p class="sub">What the Skills on Job Requisitions launch means, what you do in Workday step by step, and where the skills library lives. Written for a corporate recruiter who has fifteen minutes.</p>
+  <nav class="toc">
+    <a href="#l1">1 Start here</a><a href="#l2">2 Words to know</a><a href="#l3">3 Why</a><a href="#l4">4 What is live</a><a href="#l5">5 Does it apply to my req?</a><a href="#l6">6 Step by step in Workday</a><a href="#l7">7 Where the library is</a><a href="#l8">8 The conversation</a><a href="#l9">9 Scenarios</a><a href="#l10">10 Crawl, Walk, Run</a><a href="#l11">11 Self-check</a><a href="#l12">12 Resources</a>
+  </nav>
+</header>
+
+<!-- 1 -->
+<section class="lesson" id="l1">
+  <div class="text">
+    <div class="num">LESSON 1</div>
+    <h2>Start here: the whole thing in five sentences</h2>
+    <p>Workday, Nike's applicant tracking system, now pre-fills a list of about 19 skills on every new job requisition, pulled from the role's validated Job Profile. For Grade 20 and above roles, you review that list with the hiring manager during the strategy session and narrow it to the 3 to 10 skills most critical to success. You make the edits in one field only, Optional Skills, and never touch Required Skills. You finish before posting and do not change the list afterward. Right now candidates never see the skills and interviewers do not score against them; this phase is about getting the requisition right.</p>
+  </div>
+  <div class="callout">The one habit to build: open the req and look at the defaulted Optional Skills <span class="k">before</span> the strategy session, so the conversation starts from the list and not from a blank page.</div>
+</section>
+
+<!-- 2 -->
+<section class="lesson full" id="l2">
+  <div class="text"><div class="num">LESSON 2</div><h2>Words to know</h2></div>
+  <div class="gloss">
+    <div class="term"><div class="t">Skill</div><div class="d">An ability you use to get work done. Practical, learnable, built over time. Two kinds on job profiles: technical (data analysis, vendor negotiation) and interpersonal (communication, collaboration).</div></div>
+    <div class="term"><div class="t">Job Profile</div><div class="d">The Workday record that defines a job. Each validated profile now carries 15 to 20 skills. A req inherits the skills of its Job Profile.</div></div>
+    <div class="term"><div class="t">Optional Skills</div><div class="d">The Workday field on the requisition where the profile's skills land and where you edit. The only field approved for skills, per Nike Legal.</div></div>
+    <div class="term"><div class="t">Suggested Skills</div><div class="d">Skills Workday recommends on its own. Use them to spark ideas. They never replace hiring manager alignment.</div></div>
+    <div class="term"><div class="t">Required Skills</div><div class="d">A field you never use. If anything is entered, Workday validation stops the req from moving forward.</div></div>
+    <div class="term"><div class="t">Skills Cloud</div><div class="d">Workday's skills library of 200,000+ entries. You reach it by typing in the Optional Skills field; it is the search behind that box.</div></div>
+    <div class="term"><div class="t">Skills alignment</div><div class="d">The Grade 20+ conversation where recruiter and hiring manager agree on the 3 to 10 skills most relevant to success. It happens inside the strategy session.</div></div>
+    <div class="term"><div class="t">Batch A / Batch B</div><div class="d">Batch A: about 2,000 profiles already validated and live, so their reqs auto-fill. Batch B: about 1,500 more, mapped but not loaded, so their reqs start empty.</div></div>
+    <div class="term"><div class="t">Talent Profile / Talent Card</div><div class="d">Where teammates list their own skills. Teammates own that side; reqs describe what a role needs.</div></div>
+    <div class="term"><div class="t">Crawl, Walk, Run</div><div class="d">The three phases of the rollout. We are in Crawl: skills on reqs, no change to candidate assessment.</div></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="lesson" id="l3">
+  <div class="text">
+    <div class="num">LESSON 3</div>
+    <h2>Why Nike is doing this</h2>
+    <p>Skills give recruiters, managers, and teammates one way to describe work. For the business that means clearer hiring criteria, better visibility into which skills already exist inside Nike (build, buy, or borrow), and cleaner data for workforce planning and internal mobility. For teammates it means a visible Talent Profile that roles and projects can find, and development goals tied to a library of learning.</p>
+    <p>For you, the payoff in this phase is role clarity: you and the hiring manager agree on what matters before anything is posted.</p>
+  </div>
+  <svg viewBox="0 0 420 230" role="img" aria-label="Four pillars: role clarity, consistency, better data, talent access, resting on the base of skills on reqs">
+    <rect x="20" y="180" width="380" height="32" rx="4" fill="var(--accent)"/>
+    <text x="210" y="201" text-anchor="middle" font-family="Barlow Condensed, Impact, sans-serif" font-weight="800" font-size="18" fill="var(--accent-ink)">SKILLS ON EVERY REQUISITION</text>
+    <g font-family="Barlow Condensed, Impact, sans-serif" font-weight="800" font-size="17" text-anchor="middle" fill="var(--ink)">
+      <rect x="22" y="60" width="86" height="110" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="65" y="90">ROLE</text><text x="65" y="110">CLARITY</text>
+      <rect x="119" y="60" width="86" height="110" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="162" y="100">CONSISTENCY</text>
+      <rect x="216" y="60" width="86" height="110" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="259" y="90">BETTER</text><text x="259" y="110">DATA</text>
+      <rect x="313" y="60" width="86" height="110" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="356" y="90">TALENT</text><text x="356" y="110">ACCESS</text>
+    </g>
+    <g font-size="11" fill="var(--muted)" text-anchor="middle">
+      <text x="65" y="140">recruiter and HM</text><text x="65" y="154">agree first</text>
+      <text x="162" y="140">same language</text><text x="162" y="154">across lifecycle</text>
+      <text x="259" y="140">planning and</text><text x="259" y="154">mobility insight</text>
+      <text x="356" y="140">transferable skills</text><text x="356" y="154">widen the pool</text>
+    </g>
+    <text x="210" y="36" text-anchor="middle" font-size="14" fill="var(--ink)">Better skills alignment today, more informed talent decisions tomorrow</text>
+  </svg>
+</section>
+
+<!-- 4 -->
+<section class="lesson full" id="l4">
+  <div class="text"><div class="num">LESSON 4</div><h2>What is already live</h2><p>Lightcast drafted 15 to 20 skills per job profile from market data. TA Peer Coaches and Talent COEs reviewed every job family, and Business HR validated 638 priority Sport Offense and Firstline roles. Skills on reqs went live October 22.</p></div>
+  <div class="stats">
+    <div class="stat"><div class="n">2,000</div><div class="l">active job profiles with validated skills (Batch A)</div></div>
+    <div class="stat"><div class="n">~19</div><div class="l">skills per profile on average, so expect a long default list</div></div>
+    <div class="stat"><div class="n">13,500+</div><div class="l">skills reviewed by Nike experts</div></div>
+    <div class="stat"><div class="n">~1,500</div><div class="l">more profiles in Batch B, mapped but not yet loaded</div></div>
+    <div class="stat"><div class="n">42,000+</div><div class="l">skills already added to development goals by 16,000+ teammates</div></div>
+    <div class="stat"><div class="n">29.1%</div><div class="l">of teammates have at least one skill on their Talent Profile</div></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="lesson" id="l5">
+  <div class="text">
+    <div class="num">LESSON 5</div>
+    <h2>Does this apply to my req?</h2>
+    <p>Grade decides everything. Check the global grade on the requisition first.</p>
+    <ul>
+      <li><span class="k">Grade 20 and above:</span> you lead skills alignment with the hiring manager and edit Optional Skills.</li>
+      <li><span class="k">Grade 10 and 15:</span> nothing to do. The validated skills populate automatically and stay unchanged. The hiring manager does not see them during req creation.</li>
+    </ul>
+    <div class="callout warn">Firstline+ grade-specific guidance arrives November 2. Until then, follow the grade rule above.</div>
+  </div>
+  <svg viewBox="0 0 420 300" role="img" aria-label="Flowchart: recruiter assigned, check grade; grade 20 plus leads to alignment and editing; grade 10 or 15 leads to no edits; both end at post role">
+    <defs><marker id="fa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink)"/></marker></defs>
+    <g font-size="13" text-anchor="middle" fill="var(--ink)">
+      <rect x="130" y="12" width="160" height="38" rx="19" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="210" y="36">Recruiter assigned to role</text>
+      <path d="M210 50 L210 70" stroke="var(--ink)" stroke-width="1.5" marker-end="url(#fa)"/>
+      <path d="M210 72 L270 102 L210 132 L150 102 Z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/><text x="210" y="106" font-weight="600">Grade?</text>
+      <path d="M150 102 L80 102 L80 150" stroke="var(--ink)" stroke-width="1.5" fill="none" marker-end="url(#fa)"/>
+      <path d="M270 102 L340 102 L340 150" stroke="var(--ink)" stroke-width="1.5" fill="none" marker-end="url(#fa)"/>
+      <text x="112" y="96" font-size="12" fill="var(--muted)">20+</text><text x="308" y="96" font-size="12" fill="var(--muted)">10 or 15</text>
+      <rect x="14" y="152" width="132" height="92" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="80" y="174" font-weight="600">You lead alignment</text><text x="80" y="194" font-size="12">review defaults, align</text><text x="80" y="210" font-size="12">on 3 to 10 with HM,</text><text x="80" y="226" font-size="12">edit Optional Skills</text>
+      <rect x="274" y="152" width="132" height="92" rx="4" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+      <text x="340" y="174" font-weight="600">No edits</text><text x="340" y="194" font-size="12">validated skills</text><text x="340" y="210" font-size="12">auto-populate and</text><text x="340" y="226" font-size="12">stay unchanged</text>
+      <path d="M80 244 L80 268 L200 268" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
+      <path d="M340 244 L340 268 L222 268" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
+      <rect x="150" y="256" width="120" height="30" rx="15" fill="var(--ink)"/><text x="210" y="276" fill="var(--bg)" font-weight="600">Post the role</text>
+    </g>
+  </svg>
+</section>
+
+<!-- 6 -->
+<section class="lesson full" id="l6">
+  <div class="text"><div class="num">LESSON 6</div><h2>Step by step in Workday (Grade 20+)</h2>
+  <p>Six steps from assignment to posting. The screens are simplified sketches of the requisition's Qualifications area; your exact clicks are in the Workday Work Instructions in the TA Playbook from October 28.</p></div>
+  <div class="steps">
+
+    <div class="step">
+      <div><span class="sn">1</span><h3>Open the requisition and read the defaulted skills</h3>
+        <div class="do"><p>Before the strategy session, open the req in Workday and find the skills section. Optional Skills will already hold the Job Profile's validated skills, usually around 19. Read them against the job description and note which look broad, duplicated, or off.</p>
+        <p class="where">Where: the job requisition, Qualifications area, Optional Skills field. If it is empty, the profile is in Batch B; see Lesson 9.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch of a requisition screen with the Optional Skills field holding many skill chips">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="0" y="0" width="440" height="30" rx="6" fill="var(--wd)"/><text x="14" y="20" fill="#fff" font-size="13" font-weight="600">Job Requisition: R-00000 · Principal Architect</text>
+        <text x="16" y="56" font-size="13" font-weight="600" fill="var(--ink)">Qualifications</text>
+        <text x="16" y="80" font-size="12" fill="var(--muted)">Optional Skills</text>
+        <rect x="16" y="88" width="408" height="118" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="24" y="96" width="98" height="20" rx="10" fill="var(--chip)"/><text x="32" y="110">Solution Design</text>
+          <rect x="128" y="96" width="112" height="20" rx="10" fill="var(--chip)"/><text x="136" y="110">Cloud Architecture</text>
+          <rect x="246" y="96" width="84" height="20" rx="10" fill="var(--chip)"/><text x="254" y="110">Data Modeling</text>
+          <rect x="336" y="96" width="80" height="20" rx="10" fill="var(--chip)"/><text x="344" y="110">Governance</text>
+          <rect x="24" y="122" width="120" height="20" rx="10" fill="var(--chip)"/><text x="32" y="136">Systems Integration</text>
+          <rect x="150" y="122" width="96" height="20" rx="10" fill="var(--chip)"/><text x="158" y="136">Communication</text>
+          <rect x="252" y="122" width="84" height="20" rx="10" fill="var(--chip)"/><text x="260" y="136">Collaboration</text>
+          <rect x="342" y="122" width="74" height="20" rx="10" fill="var(--chip)"/><text x="350" y="136">Budgeting</text>
+          <rect x="24" y="148" width="104" height="20" rx="10" fill="var(--chip)"/><text x="32" y="162">Risk Assessment</text>
+          <rect x="134" y="148" width="110" height="20" rx="10" fill="var(--chip)"/><text x="142" y="162">Vendor Negotiation</text>
+          <rect x="250" y="148" width="96" height="20" rx="10" fill="var(--chip)"/><text x="258" y="162">Agile Methods</text>
+          <rect x="352" y="148" width="64" height="20" rx="10" fill="var(--chip)"/><text x="360" y="162">Mentoring</text>
+          <text x="24" y="190" fill="var(--muted)">+ 7 more</text>
+        </g>
+        <text x="16" y="230" font-size="12" fill="var(--muted)">Suggested Skills (reference) · Required Skills (leave empty)</text>
+      </svg>
+    </div>
+
+    <div class="step">
+      <div><span class="sn">2</span><h3>Share your screen in the strategy session</h3>
+        <div class="do"><p>With the hiring manager, walk the Optional Skills list and glance at Suggested Skills. Frame it as defining success in the role, not as a Workday chore. Ask: which skills connect most directly to the outcomes we just discussed, which are too broad or duplicated, and what is missing?</p>
+        <p class="where">Where: your screen, the same Qualifications area. Lesson 8 has the words to use.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch of a shared screen in a video call showing the skills list with a recruiter and hiring manager reviewing it">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="14" y="14" width="300" height="190" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+        <rect x="14" y="14" width="300" height="22" rx="4" fill="var(--wd)"/><text x="24" y="29" fill="#fff" font-size="11">Shared screen · Workday · Optional Skills</text>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="24" y="48" width="98" height="20" rx="10" fill="var(--chip)"/><text x="32" y="62">Solution Design</text>
+          <rect x="128" y="48" width="112" height="20" rx="10" fill="var(--chip)"/><text x="136" y="62">Cloud Architecture</text>
+          <rect x="24" y="74" width="120" height="20" rx="10" fill="var(--chip)"/><text x="32" y="88">Systems Integration</text>
+          <rect x="150" y="74" width="80" height="20" rx="10" fill="var(--chip)"/><text x="158" y="88">Governance</text>
+          <rect x="24" y="100" width="96" height="20" rx="10" fill="var(--chip)"/><text x="32" y="114">Communication</text>
+          <rect x="126" y="100" width="74" height="20" rx="10" fill="var(--chip)"/><text x="134" y="114">Budgeting</text>
+          <text x="24" y="150" fill="var(--muted)">...</text>
+        </g>
+        <g font-size="11" text-anchor="middle">
+          <circle cx="370" cy="70" r="26" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="370" y="74" fill="var(--ink)" font-weight="600">You</text>
+          <circle cx="370" cy="150" r="26" fill="var(--wd-soft)" stroke="var(--wd)"/><text x="370" y="154" fill="var(--ink)" font-weight="600">HM</text>
+          <text x="370" y="110" fill="var(--muted)" font-size="10">"Which of these</text><text x="370" y="122" fill="var(--muted)" font-size="10">matter most?"</text>
+        </g>
+        <text x="14" y="230" font-size="12" fill="var(--muted)">Goal of this screen: agree, not administer.</text>
+      </svg>
+    </div>
+
+    <div class="step">
+      <div><span class="sn">3</span><h3>Remove what does not fit</h3>
+        <div class="do"><p>Take off skills the hiring manager says are not relevant, too broad, or repeat another entry. Removing is most of the work: nineteen rarely survive to ten. If the defaulted list is badly wrong for the role, finish the alignment anyway and then flag the profile to your Leader or Peer Coach so it is fixed for the next req.</p>
+        <p class="where">Where: Edit Job Requisition, Optional Skills field, the remove control on each skill.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch of the Optional Skills field with several chips crossed out for removal">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="0" y="0" width="440" height="30" rx="6" fill="var(--wd)"/><text x="14" y="20" fill="#fff" font-size="13" font-weight="600">Edit Job Requisition · Optional Skills</text>
+        <rect x="16" y="50" width="408" height="150" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="24" y="60" width="98" height="20" rx="10" fill="var(--chip)"/><text x="32" y="74">Solution Design</text>
+          <rect x="128" y="60" width="112" height="20" rx="10" fill="var(--chip)"/><text x="136" y="74">Cloud Architecture</text>
+          <rect x="246" y="60" width="84" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="254" y="74">Data Modeling</text><text x="326" y="74" fill="var(--bad)" font-weight="700">×</text>
+          <rect x="24" y="88" width="120" height="20" rx="10" fill="var(--chip)"/><text x="32" y="102">Systems Integration</text>
+          <rect x="150" y="88" width="96" height="20" rx="10" fill="var(--chip)"/><text x="158" y="102">Communication</text>
+          <rect x="252" y="88" width="84" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="260" y="102">Collaboration</text><text x="332" y="102" fill="var(--bad)" font-weight="700">×</text>
+          <rect x="24" y="116" width="104" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="32" y="130">Risk Assessment</text><text x="124" y="130" fill="var(--bad)" font-weight="700">×</text>
+          <rect x="134" y="116" width="110" height="20" rx="10" fill="var(--chip)"/><text x="142" y="130">Vendor Negotiation</text>
+          <rect x="250" y="116" width="96" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="258" y="130">Agile Methods</text><text x="342" y="130" fill="var(--bad)" font-weight="700">×</text>
+          <rect x="24" y="144" width="64" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="32" y="158">Mentoring</text><text x="84" y="158" fill="var(--bad)" font-weight="700">×</text>
+          <rect x="94" y="144" width="74" height="20" rx="10" fill="var(--bad-soft)" stroke="var(--bad)"/><text x="102" y="158">Budgeting</text><text x="164" y="158" fill="var(--bad)" font-weight="700">×</text>
+        </g>
+        <text x="16" y="226" font-size="12" fill="var(--muted)">Too broad, duplicated, or not tied to the outcomes: remove.</text>
+      </svg>
+    </div>
+
+    <div class="step">
+      <div><span class="sn">4</span><h3>Add what is missing from the skills library</h3>
+        <div class="do"><p>For any critical skill the hiring manager names that is not on the list, click into the Optional Skills field and start typing. The search that appears is the Workday Skills Cloud, the 200,000-entry library. Pick the closest validated entry. Prefer a specific skill over a broad one when both exist.</p>
+        <p class="where">Where: the Optional Skills field itself. Typing opens the library; there is no separate menu to find. Lesson 7 shows it up close.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch of typing into the Optional Skills field with a search dropdown of matching Skills Cloud entries">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="0" y="0" width="440" height="30" rx="6" fill="var(--wd)"/><text x="14" y="20" fill="#fff" font-size="13" font-weight="600">Edit Job Requisition · Optional Skills</text>
+        <rect x="16" y="50" width="408" height="48" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="24" y="60" width="98" height="20" rx="10" fill="var(--chip)"/><text x="32" y="74">Solution Design</text>
+          <rect x="128" y="60" width="112" height="20" rx="10" fill="var(--chip)"/><text x="136" y="74">Cloud Architecture</text>
+        </g>
+        <rect x="246" y="58" width="170" height="24" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="254" y="75" font-size="12" fill="var(--ink)">enterprise arch|</text>
+        <rect x="246" y="86" width="170" height="118" rx="3" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="256" y="102" font-size="10" fill="var(--muted)">SKILLS CLOUD · 4 matches</text>
+        <rect x="248" y="108" width="166" height="22" fill="var(--accent-soft)"/><text x="256" y="123" font-size="12" fill="var(--ink)" font-weight="600">Enterprise Architecture</text>
+        <text x="256" y="147" font-size="12" fill="var(--ink)">Enterprise Architecture Planning</text>
+        <text x="256" y="169" font-size="12" fill="var(--ink)">Architecture Governance</text>
+        <text x="256" y="191" font-size="12" fill="var(--ink)">Enterprise Integration</text>
+        <text x="16" y="130" font-size="12" fill="var(--ink)" font-weight="600">Type to search</text>
+        <text x="16" y="148" font-size="12" fill="var(--muted)">the library opens</text>
+        <text x="16" y="164" font-size="12" fill="var(--muted)">inside the field</text>
+        <path d="M150 140 L238 118" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+        <text x="16" y="226" font-size="12" fill="var(--muted)">Pick the validated entry closest to what the HM described.</text>
+      </svg>
+    </div>
+
+    <div class="step">
+      <div><span class="sn">5</span><h3>Confirm 3 to 10, and that Required Skills is empty</h3>
+        <div class="do"><p>Count the list. Between 3 and 10, each one the hiring manager can explain in a sentence. Then check the Required Skills field: it must be empty. Anything in it blocks the req. Save, and read the final list back to the hiring manager so there is no surprise later.</p>
+        <p class="where">Where: Edit Job Requisition, Qualifications area, both fields visible together.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch of the final list of seven skills in Optional Skills, with Required Skills shown empty and marked do not use">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="0" y="0" width="440" height="30" rx="6" fill="var(--wd)"/><text x="14" y="20" fill="#fff" font-size="13" font-weight="600">Edit Job Requisition · Qualifications</text>
+        <text x="16" y="54" font-size="12" fill="var(--muted)">Optional Skills</text>
+        <rect x="16" y="62" width="408" height="76" rx="4" fill="var(--bg)" stroke="var(--good)" stroke-width="2"/>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="24" y="70" width="98" height="20" rx="10" fill="var(--good-soft)"/><text x="32" y="84">Solution Design</text>
+          <rect x="128" y="70" width="112" height="20" rx="10" fill="var(--good-soft)"/><text x="136" y="84">Cloud Architecture</text>
+          <rect x="246" y="70" width="130" height="20" rx="10" fill="var(--good-soft)"/><text x="254" y="84">Enterprise Architecture</text>
+          <rect x="24" y="98" width="120" height="20" rx="10" fill="var(--good-soft)"/><text x="32" y="112">Systems Integration</text>
+          <rect x="150" y="98" width="80" height="20" rx="10" fill="var(--good-soft)"/><text x="158" y="112">Governance</text>
+          <rect x="236" y="98" width="110" height="20" rx="10" fill="var(--good-soft)"/><text x="244" y="112">Vendor Negotiation</text>
+          <rect x="352" y="98" width="64" height="20" rx="10" fill="var(--good-soft)"/><text x="360" y="112">Mentoring</text>
+        </g>
+        <text x="330" y="54" font-size="12" fill="var(--good)" font-weight="700">7 of 10 ✓</text>
+        <text x="16" y="166" font-size="12" fill="var(--muted)">Required Skills</text>
+        <rect x="16" y="174" width="408" height="34" rx="4" fill="var(--bad-soft)" stroke="var(--bad)" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="28" y="196" font-size="12" fill="var(--bad)" font-weight="700">LEAVE EMPTY · Not approved · Workday blocks the req if used</text>
+        <text x="16" y="234" font-size="12" fill="var(--muted)">Save, then read the seven back to the HM.</text>
+      </svg>
+    </div>
+
+    <div class="step">
+      <div><span class="sn">6</span><h3>Post, then leave the skills alone</h3>
+        <div class="do"><p>Post the role as usual. The hiring manager can now see the aligned skills on the requisition in Workday. Candidates cannot; that comes in the Walk phase. Do not change the aligned skills after posting. If something must change, talk to your Leader or Peer Coach rather than editing.</p>
+        <p class="where">Where: your normal posting flow. Put the final list in your recap email so it is on record.</p></div></div>
+      <svg viewBox="0 0 440 250" role="img" aria-label="Sketch showing the posted requisition, the hiring manager able to see skills, candidates not seeing skills, and a lock on the list">
+        <rect x="0" y="0" width="440" height="250" rx="6" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="0" y="0" width="440" height="30" rx="6" fill="var(--wd)"/><text x="14" y="20" fill="#fff" font-size="13" font-weight="600">Job Requisition · Status: Open, Posted</text>
+        <rect x="16" y="48" width="200" height="150" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+        <text x="28" y="68" font-size="12" font-weight="600" fill="var(--ink)">Optional Skills (7)</text>
+        <g font-size="11" fill="var(--ink)">
+          <rect x="28" y="78" width="98" height="18" rx="9" fill="var(--good-soft)"/><text x="36" y="91">Solution Design</text>
+          <rect x="28" y="102" width="112" height="18" rx="9" fill="var(--good-soft)"/><text x="36" y="115">Cloud Architecture</text>
+          <rect x="28" y="126" width="130" height="18" rx="9" fill="var(--good-soft)"/><text x="36" y="139">Enterprise Architecture</text>
+          <text x="28" y="166" fill="var(--muted)">+ 4 more</text>
+        </g>
+        <rect x="158" y="56" width="50" height="22" rx="4" fill="var(--ink)"/><text x="183" y="71" font-size="11" fill="var(--bg)" text-anchor="middle" font-weight="700">LOCKED</text>
+        <g font-size="12" fill="var(--ink)">
+          <circle cx="262" cy="90" r="18" fill="var(--wd-soft)" stroke="var(--wd)"/><text x="262" y="94" text-anchor="middle" font-weight="600" font-size="11">HM</text>
+          <text x="292" y="86" font-weight="600" fill="var(--good)">Can see skills</text><text x="292" y="102" fill="var(--muted)" font-size="11">on the req in Workday</text>
+          <circle cx="262" cy="160" r="18" fill="var(--chip)" stroke="var(--line)"/><text x="262" y="164" text-anchor="middle" font-weight="600" font-size="10">Cand.</text>
+          <text x="292" y="156" font-weight="600" fill="var(--bad)">Cannot see skills</text><text x="292" y="172" fill="var(--muted)" font-size="11">until the Walk phase</text>
+        </g>
+        <text x="16" y="230" font-size="12" fill="var(--muted)">No edits to aligned skills after posting.</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="lesson" id="l7">
+  <div class="text">
+    <div class="num">LESSON 7</div>
+    <h2>Where the skills library is</h2>
+    <p>Recruiters ask "where do I go to get the skills?" The answer is that you do not go anywhere. The library, Workday's Skills Cloud, sits behind the Optional Skills field on the requisition. Click into the field, type a few letters, and the matching library entries appear. Choose one and it becomes a skill on the req.</p>
+    <ul>
+      <li>Search by the words the hiring manager used. Try two or three phrasings if the first returns nothing useful.</li>
+      <li>Suggested Skills, shown near the same area, is Workday's own shortlist for this profile. Scan it for ideas, then still search and confirm with the hiring manager.</li>
+      <li>Only entries from the library can be added. If a skill truly does not exist, pick the nearest one and note the gap for your Peer Coach.</li>
+    </ul>
+    <div class="callout">Three fields sit together on the req. Optional Skills is where you work. Suggested Skills is a hint list. Required Skills is off limits.</div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Field on the requisition</th><th>What is in it</th><th>Your action</th></tr></thead>
+    <tbody>
+      <tr><td><span class="k">Optional Skills</span> <span class="pill ok">Use this</span></td><td>Validated Job Profile skills, auto-populated. Starting point for alignment. Type here to search the Skills Cloud.</td><td>Remove, add, finalize 3 to 10 before posting.</td></tr>
+      <tr><td><span class="k">Suggested Skills</span> <span class="pill ref">Reference</span></td><td>System-generated recommendations that may surface other relevant capabilities.</td><td>Read for ideas. Never a substitute for HM alignment.</td></tr>
+      <tr><td><span class="k">Required Skills</span> <span class="pill no">Never</span></td><td>Not approved for this process, per Nike Legal.</td><td>Leave empty. Any entry blocks the req from progressing.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section class="lesson full" id="l8">
+  <div class="text"><div class="num">LESSON 8</div><h2>Running the conversation</h2><p>Three moves inside the strategy session, with the deck's suggested words. Applies to Grade 20+ only.</p></div>
+  <div class="steps">
+    <div class="step">
+      <div><span class="sn">1</span><h3>Frame the purpose</h3><p class="muted">Position it as defining success, not admin.</p></div>
+      <div class="script">"As part of our strategy session, we'll review the skills associated with this role and align on those most critical to success. This helps ensure the requisition accurately reflects the capabilities needed."</div>
+    </div>
+    <div class="step">
+      <div><span class="sn">2</span><h3>Evaluate the defaulted skills</h3><p class="muted">The existing list is the starting point. Ask three questions.</p></div>
+      <ul><li>Which skills are most directly connected to the outcomes we discussed?</li><li>Which skills are too broad, duplicative, or less relevant?</li><li>Are any critical skills missing?</li></ul>
+    </div>
+    <div class="step">
+      <div><span class="sn">3</span><h3>Prioritize and confirm</h3><p class="muted">Land on 3 to 10 and close the loop.</p></div>
+      <div class="script">"We've aligned on the skills most critical to this role. I'll update the requisition to reflect our discussion, and you'll be able to review those skills in Workday once the requisition is posted."</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="lesson full" id="l9">
+  <div class="text"><div class="num">LESSON 9</div><h2>Four scenarios you will hit</h2></div>
+  <div class="gloss">
+    <div class="term"><div class="t">Too many skills</div><div class="d"><span class="k">Say:</span> "A longer list can make it harder to distinguish the capabilities that matter most. Let's focus on the skills most directly connected to success in this role."</div></div>
+    <div class="term"><div class="t">Too few skills</div><div class="d"><span class="k">Say:</span> "Let's revisit the key responsibilities and outcomes for this role to determine whether there are additional skills that are important to successful performance."</div></div>
+    <div class="term"><div class="t">Nothing auto-populated</div><div class="d">The profile is in Batch B. Same process: align on 3 to 10 with the HM, search each in the Optional Skills field, add manually before posting. Suggested Skills can help you ideate.</div></div>
+    <div class="term"><div class="t">Defaults do not fit the role</div><div class="d">Review which do not match the responsibilities, discuss with the HM, remove and add in Optional Skills, confirm 3 to 10, and flag the profile to your Leader or Peer Coach so it is corrected.</div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="lesson full" id="l10">
+  <div class="text"><div class="num">LESSON 10</div><h2>Crawl, Walk, Run</h2><p>What this is now and what it becomes. Knowing the phase keeps you from over-promising to hiring managers.</p></div>
+  <div class="phases">
+    <div class="phase now"><div class="ph">Crawl</div><div class="when">FY27 Q2, live now</div><ul><li>Skills on reqs in Workday</li><li>Recruiter and HM align for Grade 20+</li><li>No change to how candidates are assessed</li><li>Not candidate-facing, not in interview guides or feedback tasks</li></ul></div>
+    <div class="phase"><div class="ph">Walk</div><div class="when">About FY27 Q3 to Q4</div><ul><li>Skills visible to candidates on postings</li><li>Integrated into interviews and evaluations</li><li>Recruiter, HM, and interviewer readiness expands</li></ul></div>
+    <div class="phase"><div class="ph">Run</div><div class="when">About FY27 Q4 to FY28</div><ul><li>Skills-based hiring at scale</li><li>Personalized talent and job recommendations</li><li>Connected enterprise tools</li></ul></div>
+  </div>
+  <div class="callout stop">If a hiring manager asks "so interviewers will score against these?", the answer today is no. Skills are not standalone assessment criteria in Crawl. They sharpen the req and build the data for Walk.</div>
+</section>
+
+<!-- 11 -->
+<section class="lesson full" id="l11">
+  <div class="text"><div class="num">LESSON 11</div><h2>Self-check</h2><p>Answer in your head, then open each one.</p></div>
+  <div>
+    <details><summary>A Grade 15 req opens with 18 skills on it. What do you do?</summary><p>Nothing. Grade 10 and 15 reqs use the validated skills automatically and they stay unchanged. Post as usual.</p></details>
+    <details><summary>The hiring manager wants 14 skills. What do you say?</summary><p>"A longer list can make it harder to distinguish the capabilities that matter most. Let's focus on the skills most directly connected to success in this role." Then narrow to 3 to 10.</p></details>
+    <details><summary>Where do you find the skills library?</summary><p>Inside the Optional Skills field on the requisition. Click in, type, and the Skills Cloud matches appear. There is no separate screen to visit.</p></details>
+    <details><summary>Which field do you never use, and why?</summary><p>Required Skills. It is not approved per Nike Legal, and Workday validation blocks the req from progressing if anything is entered.</p></details>
+    <details><summary>The req opened with no skills at all. Is the process different?</summary><p>No. The profile is in Batch B. Align on 3 to 10 with the HM, search each in Optional Skills, add them manually before posting.</p></details>
+    <details><summary>The HM wants to swap a skill a week after posting. Can you?</summary><p>No. Do not change aligned skills after posting. Raise it with your Leader or Peer Coach.</p></details>
+    <details><summary>Will candidates see the skills on the posting?</summary><p>Not in Crawl. That arrives in the Walk phase, around FY27 Q3 to Q4.</p></details>
+    <details><summary>The defaulted skills look like they belong to a different job. What do you do?</summary><p>Align with the HM anyway (remove, add, confirm 3 to 10), then flag the Job Profile validation concern to your designated Leader or Peer Coach.</p></details>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="lesson full" id="l12">
+  <div class="text"><div class="num">LESSON 12</div><h2>Resources and dates</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Resource</th><th>What it gives you</th><th>When</th></tr></thead>
+    <tbody>
+      <tr><td>Workday Work Instructions (TA Playbook)</td><td>Step-by-step clicks for reviewing, editing, and finalizing Optional Skills</td><td>October 28</td></tr>
+      <tr><td>Firstline+ Resources</td><td>Grade-specific guidance for Firstline+ requisition workflows</td><td>November 2</td></tr>
+      <tr><td>Strategy / Intake Session Guide</td><td>Updated guidance for bringing skills alignment into HM conversations</td><td>Available</td></tr>
+      <tr><td>Pre-Strategy Session Email Template</td><td>Sample note to prepare HMs for the skills discussion</td><td>Available</td></tr>
+      <tr><td>Skills basics for all teammates</td><td>HR site: Performance and Career, Talent Profile, Skills</td><td>Available</td></tr>
+      <tr><td>Your Leader or Peer Coach</td><td>Where to flag a Job Profile whose skills do not fit the role</td><td>Any time</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Skills on job reqs went live October 22. Three principles to carry: align on the right skills, capture them consistently, build the foundation for a skills-driven future.</p>
+</section>
+
+<footer>Compiled from the TA Enablement deck "Skills on Job Requisitions" (FY27, Corporate and Firstline+) and the Global Corporate TA Hiring Strategy Session Guide. Screen sketches are simplified; follow the Workday Work Instructions for exact navigation.</footer>
+</div>

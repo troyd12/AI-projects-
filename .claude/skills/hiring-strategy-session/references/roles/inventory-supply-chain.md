@@ -9,6 +9,22 @@ center operations.
 Note: Americas Supply Chain Grade 20+ roles carry the internal candidate feedback obligation
 in section G, the same as Global Corp Grade 20+. Check the grade early.
 
+## Likely Workday skill labels
+
+Look for these on the defaulted list or search them in the Optional Skills field.
+
+- Inventory Management
+- Inventory Planning / Replenishment Planning
+- Demand Forecasting
+- Supply Planning
+- Sales and Operations Planning (S&OP)
+- Data Analysis
+- Process Improvement
+- Vendor Management
+- Supply Chain Systems (prefer the capability; name the system in your notes)
+
+The capability statements below say what each label sounds like when an HM describes it, and what to listen for. They are recruiter notes, not Workday text.
+
 ## What usually makes these searches hard
 
 - "Supply chain" spans planning, sourcing, logistics, and analytics; a candidate strong in
@@ -19,7 +35,7 @@ in section G, the same as Global Corp Grade 20+. Check the grade early.
   the latter, and treating it as critical shrinks the pool for no gain.
 - Analytical depth vs operational judgment: ask which one the last person lacked.
 
-## Starter Skills for Success (draft for the HM to cut, rank, add)
+## What the labels mean for this role (recruiter notes for keep / remove / add)
 
 Critical candidates
 1. Builds and runs inventory or replenishment plans that balance service level, working

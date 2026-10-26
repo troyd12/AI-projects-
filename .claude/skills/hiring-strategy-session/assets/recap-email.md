@@ -17,14 +17,14 @@ Thanks for the time today. Here is where we landed and what happens next.
 - Interviews: [panel], alternates [names]; earliest start [date]; target start date [date].
 - Check-ins: [weekly / bi-weekly] on [day].
 
-**Skills for Success (going on the Workday requisition)**
-Critical
-1. [skill] : [evidence]
-2. [skill] : [evidence]
-3. [skill] : [evidence]
-Supporting
-4. [skill] : [evidence]
-5. [skill] : [evidence]
+**Skills on the requisition (Grade 20+)**
+We aligned on these [N] Optional Skills. I have updated the requisition; you can review
+them in Workday once it is posted. In this phase they are not shown to candidates and are
+not interview criteria; they make sure the req reflects what the role needs.
+1. [Label] : [why it matters for this role]
+2. [Label] : [why]
+3. [Label] : [why]
+Removed: [labels]. Added: [labels]. These stay fixed once the role is posted.
 
 **Connection to Sport**
 We will probe for [behavior 1], [behavior 2], and [behavior 3].

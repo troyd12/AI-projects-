@@ -22,12 +22,12 @@ guides every screen and interview. The better your inputs, the faster the search
 
 ## Skills for Success in 60 seconds
 
-Workday now carries a list of 3 to 10 skills on each requisition. Your recruiter will bring
-a draft. Your job is to cut what you would not reject a strong candidate for lacking, rank
-the top three, and add anything your best performer does that is missing. Phrase skills as
-things people do ("designs multi-region integration architectures"), not topics
-("architecture"). Skills are one input alongside experience, Leadership Defined, Connection
-to Sport, and demonstrated performance.
+Workday now pre-fills each requisition with the skills tied to the job profile, usually
+around nineteen. For Grade 20 and above roles, your recruiter will share the list on screen
+and you will narrow it together to the 3 to 10 most critical to success, removing what is
+broad or duplicated and adding anything missing. Come knowing which three you would not
+hire without. In this phase the skills are not shown to candidates and do not change how
+interviews run; they make sure the req describes the role accurately.
 
 ## Connection to Sport in 60 seconds
 

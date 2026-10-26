@@ -5,6 +5,23 @@ senior individual-contributor technical leadership roles that set direction acro
 Typical context at Nike: Global Technology, Global Service and Places (workplace, corporate
 services, and facilities technology), supply chain technology, commerce platforms.
 
+## Likely Workday skill labels
+
+Look for these on the defaulted list or search them in the Optional Skills field. Labels vary by profile; pick the closest validated entry.
+
+- Enterprise Architecture
+- Solution Architecture
+- Cloud Architecture
+- Systems Integration
+- Technology Strategy / Technology Roadmapping
+- Architecture Governance
+- Stakeholder Management
+- Vendor Evaluation / Vendor Negotiation
+- Information Security (if security-by-design matters)
+- Mentoring
+
+The capability statements below say what each label sounds like when an HM describes it, and what to listen for. They are recruiter notes, not Workday text.
+
 ## What usually makes these searches hard
 
 - The title means different things in different companies. A "principal architect" at a
@@ -17,7 +34,7 @@ services, and facilities technology), supply chain technology, commerce platform
 - Internal candidates are common and often strong. Section G (internal candidate feedback)
   almost always applies; these roles are typically Global Corp Grade 20+.
 
-## Starter Skills for Success (draft for the HM to cut, rank, add)
+## What the labels mean for this role (recruiter notes for keep / remove / add)
 
 Critical candidates
 1. Designs end-to-end architectures across multiple systems, teams, and regions, and documents

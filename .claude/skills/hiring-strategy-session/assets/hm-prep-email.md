@@ -27,10 +27,10 @@ points are fine.
    the next six to eight weeks?
 7. When would you like this person to start?
 
-One thing to think about ahead of time: as part of the Workday skills implementation, we
-will agree on a short list of Skills for Success (3 to 10) that goes on the requisition and
-guides screening and interviews. I will bring a draft list for you to react to, so no need
-to build one from scratch.
+One thing to think about ahead of time: Workday now pre-fills the requisition with the
+skills tied to this job profile. In our session I will share the list on screen and we
+will narrow it to the 3 to 10 most critical to success. No need to build anything; just
+come knowing which few you would not hire without.
 
 We will also cover Connection to Sport. Quick note: this is about athlete mindset behaviors
 (preparation, resilience, accountability, teamwork, adaptability), not whether someone

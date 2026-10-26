@@ -5,6 +5,22 @@ operations roles inside corporate services. Typical context at Nike: Global Serv
 Places (campus and workplace events, executive and employee experiences), brand and sport
 marketing events, partner and athlete events.
 
+## Likely Workday skill labels
+
+Look for these on the defaulted list or search them in the Optional Skills field.
+
+- Event Planning
+- Event Management
+- Vendor Management / Vendor Negotiation
+- Budget Management
+- Project Management
+- Stakeholder Management
+- Logistics Coordination
+- Risk Management
+- Customer Experience
+
+The capability statements below say what each label sounds like when an HM describes it, and what to listen for. They are recruiter notes, not Workday text.
+
 ## What usually makes these searches hard
 
 - The work is visible and the standard is high, so HMs want a portfolio of flawless
@@ -17,7 +33,7 @@ marketing events, partner and athlete events.
   passion, consumer instinct). Section A's MYNEXT question is a live one here; decide
   deliberately whether to promote the role to retail teammates.
 
-## Starter Skills for Success (draft for the HM to cut, rank, add)
+## What the labels mean for this role (recruiter notes for keep / remove / add)
 
 Critical candidates
 1. Plans and executes events end to end at the scale this role recurs at, from brief to

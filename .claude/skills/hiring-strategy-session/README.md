@@ -16,6 +16,7 @@ Strategy Session (intake / kickoff) under the Workday skills implementation.
 hiring-strategy-session/
 ├── SKILL.md                      # workflow, modes, quality bar
 ├── references/
+│   ├── skills-on-reqs-program.md # Workday fields, grade workflows, phases, scripts, scenarios
 │   ├── session-guide.md          # the full before / during / after guide, sections A to G
 │   ├── skills-for-success.md     # writing, prioritizing, formatting skills for Workday
 │   ├── connection-to-sport.md    # definition, HM talking point, HM and candidate questions
@@ -25,6 +26,7 @@ hiring-strategy-session/
 │       └── inventory-supply-chain.md
 ├── assets/                       # fill-in templates
 │   ├── pre-meeting-form.md
+│   ├── hm-prep-package.md
 │   ├── hm-prep-email.md
 │   ├── hm-prep-guide.md
 │   ├── session-notes.md
